@@ -34,5 +34,4 @@ export const baseStyleVariants = {
  */
 export const baseStyles = styles({
 	variants: baseStyleVariants,
-	defaults: {},
 });

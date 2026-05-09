@@ -99,7 +99,7 @@ export type StylesDef<TVariants extends Variants> = {
 	 *   defaults: { fill: 'solid' },
 	 * });
 	 */
-	extend<TNew extends Variants = Record<string, never>>(
+	extend<TNew extends Variants = EmptyObject>(
 		config: StylesExtendConfig<TVariants, TNew>
 	): StylesDef<TVariants & TNew>;
 };
@@ -138,16 +138,19 @@ export interface StyleBehaviorConfig<TVariants extends Variants> {
 	rules?: RuleFn<TVariants>;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export type EmptyObject = {};
+
 /**
  * Config accepted by the top-level `styles()` factory.
  */
 export interface StylesConfig<
-	TVariants extends Variants,
+	TVariants extends Variants = EmptyObject,
 > extends StyleBehaviorConfig<TVariants> {
 	/**
 	 * Variant definitions.
 	 */
-	variants: TVariants;
+	variants?: TVariants;
 }
 
 /**
@@ -155,7 +158,7 @@ export interface StylesConfig<
  */
 export interface StylesExtendConfig<
 	TBase extends Variants,
-	TNew extends Variants = Record<string, never>,
+	TNew extends Variants = EmptyObject,
 > extends StyleBehaviorConfig<TBase & TNew> {
 	/**
 	 * New or overriding variant definitions.
@@ -295,7 +298,7 @@ function createStylesDef<TVariants extends Variants>(
 	 * @param config Extension config (new/overridden variants, base classes, etc).
 	 * @returns A new StylesDef instance with the merged configuration.
 	 */
-	function extend<TNew extends Variants = Record<string, never>>(
+	function extend<TNew extends Variants = EmptyObject>(
 		config: StylesExtendConfig<TVariants, TNew>
 	): StylesDef<TVariants & TNew> {
 		type TMerged = TVariants & TNew;
@@ -351,12 +354,12 @@ function createStylesDef<TVariants extends Variants>(
  * // In a component:
  * alertStyles.render({ color, className })
  */
-export function styles<TVariants extends Variants>(
-	config: StylesConfig<TVariants>
+export function styles<TVariants extends Variants = EmptyObject>(
+	config: StylesConfig<TVariants> = {} as StylesConfig<TVariants>
 ): StylesDef<TVariants> {
 	return createStylesDef(
 		config.base ?? '',
-		config.variants,
+		(config.variants ?? {}) as TVariants,
 		config.defaults ?? {},
 		config.rules ? [config.rules as RuleFn] : []
 	);

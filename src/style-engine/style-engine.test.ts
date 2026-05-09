@@ -492,7 +492,6 @@ describe('.defaults property', () => {
 	it('returns empty object when no defaults defined', () => {
 		const s = styles({
 			variants: { size: { sm: 'text-sm' } },
-			defaults: {},
 		});
 		expect(s.defaults).toEqual({});
 	});
