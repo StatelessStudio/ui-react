@@ -26,8 +26,8 @@ const collapsibleButtonStyles = styles({
 		},
 	},
 	defaults: {
-		disabled: 'false',
-		open: 'false',
+		disabled: false,
+		open: false,
 	},
 });
 
@@ -87,8 +87,8 @@ export function Collapsible({
 				type="button"
 				disabled={disabled}
 				{...collapsibleButtonStyles.render({
-					disabled: disabled ? 'true' : 'false',
-					open: isOpen ? 'true' : 'false',
+					disabled,
+					open: isOpen,
 				})}
 				onClick={toggleOpen}
 				aria-expanded={isOpen}

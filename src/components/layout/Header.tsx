@@ -31,7 +31,7 @@ export function Header<E extends React.ElementType = 'header'>({
 	return (
 		<Component
 			{...headerStyles.render({
-				sticky: sticky ? 'true' : 'false',
+				sticky,
 				className,
 			})}
 			{...props}

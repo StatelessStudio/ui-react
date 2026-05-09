@@ -23,7 +23,7 @@ const sidebarContainerStyles = styles({
 		},
 	},
 	defaults: {
-		isOpen: 'false',
+		isOpen: false,
 	},
 });
 
@@ -87,7 +87,7 @@ export function SidebarLayout({
 			{/* Sidebar Container (Single Render) */}
 			<div
 				{...sidebarContainerStyles.render({
-					isOpen: isMobileMenuOpen ? 'true' : 'false',
+					isOpen: isMobileMenuOpen,
 				})}
 			>
 				{/* The Actual Sidebar Content */}
