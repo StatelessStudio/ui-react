@@ -5,13 +5,19 @@
 	"author": "{{ remrg:var organization }}",
 	"license": "{{ remrg:var license }}",
 	"scripts": {
+		"start": "npm run preview",
 		"build": "vite build",
 		"dev": "vite",
 		"preview": "vite preview",
 		"typecheck": "tsc -p tsconfig.json --noEmit",
 		"lint": "eslint . --fix && prettier --write .",
 		"lint:check": "prettier --check . && eslint .",
-		"test": "npm run lint && npm run typecheck"
+		"test": "npm run lint && npm run build && npm run test:run",
+		"test:ci": "npm run lint:check && npm run typecheck && npm run test:run",
+		"test:dev": "vitest --ui --coverage",
+		"test:run": "vitest run --coverage && npm run test:e2e",
+		"test:e2e": "playwright test",
+		"test:dev:e2e": "playwright test --ui"
 	},
 	"engines": {
 		"node": ">=22.0.0",
@@ -20,15 +26,19 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@playwright/test": "^1.43.0",
 		"@types/node": "^22.19.17",
 		"@typescript-eslint/eslint-plugin": "^8.57.2",
 		"@typescript-eslint/parser": "^8.57.2",
+		"@vitest/coverage-v8": "^4.1.2",
+		"@vitest/ui": "^4.1.2",
 		"eslint": "^10.1.0",
 		"globals": "^17.6.0",
 		"prettier": "^3.8.1",
 		"prettier-plugin-brace-style": "^0.10.1",
 		"terser": "^5.46.1",
 		"typescript": "^5.9.3",
-		"vite": "^8.0.9"
+		"vite": "^8.0.9",
+		"vitest": "^4.1.2"
 	}
 }
