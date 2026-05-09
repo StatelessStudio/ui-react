@@ -38,7 +38,7 @@ export type ToggleGroupProps = (
 	| SingleToggleGroupProps
 	| MultipleToggleGroupProps
 ) &
-	Omit<ButtonGroupProps, 'onChange'> &
+	Omit<ButtonGroupProps<'div'>, 'onChange'> &
 	ToggleGroupAppearance & {
 		disabled?: boolean;
 	};
