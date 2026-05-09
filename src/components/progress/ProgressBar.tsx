@@ -1,6 +1,6 @@
 import React from 'react';
 import { ColorVariant, colorStyles } from '@/colors';
-import { transitionAnimations } from '@/animations';
+import { animate } from '@/animations';
 import { styles, StyleProps } from '@/style-engine';
 
 const sizes = {
@@ -34,7 +34,7 @@ const progressTrackStyles = styles({
 });
 
 const progressIndicatorStyles = styles({
-	base: ['h-full rounded-full', transitionAnimations.all],
+	base: ['h-full rounded-full', animate({ transitionAll: true })],
 	variants: {
 		color: colorStyles,
 	},

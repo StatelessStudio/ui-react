@@ -1,5 +1,5 @@
 import React from 'react';
-import { transitionAnimations } from '@/animations';
+import { animate } from '@/animations';
 import { focusRingColors, textColors } from '@/colors';
 import { PolymorphicProps, StyleProps } from '@/style-engine';
 import { baseStyles } from '@/styles';
@@ -8,7 +8,7 @@ export const buttonStyles = baseStyles.extend({
 	base: [
 		'inline-flex rounded-md px-5 py-2',
 		'focus:outline-none focus:ring-2',
-		transitionAnimations.transform,
+		animate({ transitionTransform: true }),
 		'hover:opacity-90',
 		'active:translate-y-px',
 		'cursor-pointer select-none',

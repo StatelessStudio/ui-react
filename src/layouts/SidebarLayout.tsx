@@ -4,14 +4,14 @@ import { ReactNode, useState, useEffect } from 'react';
 import { Header } from '@/components/layout/Header';
 import { MenuIcon } from '@/icons';
 import { cn, styles } from '@/style-engine';
-import { transitionAnimations } from '@/animations';
+import { animate } from '@/animations';
 
 const backdropStyles =
 	'fixed inset-0 z-40 bg-black/50 transition-opacity md:hidden';
 
 const sidebarContainerStyles = styles({
 	base: cn(
-		transitionAnimations.transform,
+		animate({ transitionTransform: true }),
 		'fixed inset-y-0 left-0 z-50 transform duration-300',
 		'md:relative md:translate-x-0',
 		'h-full shrink-0'

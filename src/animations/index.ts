@@ -1,1 +1,2 @@
-export { transitionAnimations } from './transition-animations';
+export { animate } from './animate';
+export { animations } from './animations';

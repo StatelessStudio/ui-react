@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { cn, styles, StyleProps } from '@/style-engine';
+import { styles, StyleProps } from '@/style-engine';
 import { ChevronRightIcon } from '@/icons';
 import { useControllableState } from '@/hooks';
-import { transitionAnimations } from '@/animations';
+import { animate } from '@/animations';
 import { navItemStyles } from './styles';
 
 type TreeItemStyleProps = StyleProps<typeof navItemStyles>;
@@ -29,7 +29,7 @@ const treeItemNestedListStyles = styles({
 });
 
 const treeItemIconStyles = styles({
-	base: transitionAnimations.transform,
+	base: animate({ transitionTransform: true }),
 	variants: {
 		expanded: {
 			true: 'rotate-90',
