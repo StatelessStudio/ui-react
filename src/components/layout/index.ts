@@ -7,5 +7,6 @@ export * from './GridItem';
 export * from './Group';
 export * from './Header';
 export * from './PageHeading';
+export * from './ScrollArea';
 export * from './Sidebar';
 export * from './Stack';
