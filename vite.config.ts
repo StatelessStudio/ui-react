@@ -43,18 +43,14 @@ export default defineConfig({
 		lib: {
 			entry: entries.map((e) => resolve(e)),
 		},
-		minify: 'terser',
-		terserOptions: {
-			format: {
-				comments: true,
-			},
-		},
+		minify: true,
 		sourcemap: false,
 		rollupOptions: {
 			// External dependencies that shouldn't be bundled
 			external: [
 				...Object.keys(pkg.dependencies || {}),
 				...Object.keys(pkg.peerDependencies || {}),
+				'react/jsx-runtime',
 			].map((dep) => new RegExp(`^${dep}(/.*)?$`)),
 			output: [
 				{

@@ -25,6 +25,7 @@
 		"declaration": true
 	},
 	"include": [
+		"example",
 		"src",
 		"test",
 		"playwright.config.ts",

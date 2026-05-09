@@ -1,0 +1,11 @@
+name: remrg/ts-react-lib
+track: branch/remrg/v1
+version: 1.0.0
+description: 'Remrg TypeScript React Library'
+type: feature
+license: MIT
+access: public
+
+roots:
+  - ts-react
+  - ts-library

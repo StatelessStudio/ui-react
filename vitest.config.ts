@@ -9,7 +9,7 @@ export default defineConfig({
 	},
 	test: {
 		// Environment
-		environment: 'node',
+		environment: 'jsdom',
 
 		// Setup and teardown
 		globalSetup: 'test/setup-global.ts',
