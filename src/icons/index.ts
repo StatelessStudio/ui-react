@@ -5,5 +5,6 @@ export * from './ChevronRightIcon';
 export * from './ChevronUpIcon';
 export * from './CloseIcon';
 export * from './MenuIcon';
+export * from './SearchIcon';
 export * from './SpinnerIcon';
 export * from './StarIcon';
