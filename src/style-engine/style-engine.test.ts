@@ -75,6 +75,35 @@ describe('styles() variant selection', () => {
 });
 
 // ---------------------------------------------------------------------------
+// styles() — boolean variants (UnwrapBoolean)
+// ---------------------------------------------------------------------------
+
+describe('styles() boolean variants', () => {
+	it('allows passing boolean true/false for variant keys', () => {
+		const s = styles({
+			variants: {
+				isOutline: {
+					true: 'border-2 border-solid',
+					false: 'border-none',
+				},
+			},
+			defaults: { isOutline: false },
+		});
+
+		// TypeScript should not yell at passing standard booleans here
+		const trueResult = s.render({ isOutline: true });
+		expect(trueResult.className).toContain('border-2 border-solid');
+
+		const falseResult = s.render({ isOutline: false });
+		expect(falseResult.className).toContain('border-none');
+
+		// It should also still support the string versions
+		const strTrueResult = s.render({ isOutline: 'true' });
+		expect(strTrueResult.className).toContain('border-2 border-solid');
+	});
+});
+
+// ---------------------------------------------------------------------------
 // styles() — defaults
 // ---------------------------------------------------------------------------
 

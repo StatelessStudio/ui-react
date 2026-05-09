@@ -23,10 +23,21 @@ export type VariantOptions = Record<string | number, ClassList>;
 export type Variants = Record<string, VariantOptions>;
 
 /**
+ * Helper to map literal 'true' | 'false' string keys back to boolean types.
+ * We also allow `boolean` for the base widespread `string` evaluation, so
+ * generic `<Variants>` configurations satisfy the constraints.
+ */
+export type UnwrapBoolean<T> = T extends 'true' | 'false'
+	? boolean | T
+	: string extends T
+		? boolean | T
+		: T;
+
+/**
  * All variants resolved to a concrete selection.
  */
 export type FullVariantSelection<T extends Variants> = {
-	[K in keyof T]: keyof T[K];
+	[K in keyof T]: UnwrapBoolean<keyof T[K]>;
 };
 
 /**
