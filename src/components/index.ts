@@ -6,4 +6,5 @@ export * from './layout';
 export * from './media';
 export * from './navigation';
 export * from './progress';
+export * from './tables';
 export * from './typography';
