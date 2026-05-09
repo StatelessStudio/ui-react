@@ -38,7 +38,7 @@ export type ToggleGroupProps = (
 	| SingleToggleGroupProps
 	| MultipleToggleGroupProps
 ) &
-	Omit<ButtonGroupProps, 'onChange'> &
+	Omit<ButtonGroupProps<'div'>, 'onChange'> &
 	ToggleGroupAppearance & {
 		disabled?: boolean;
 	};
@@ -109,7 +109,7 @@ export function ToggleGroup(props: ToggleGroupProps) {
 	const contextValue = useMemo(
 		() => ({
 			type,
-			value: currentValue,
+			value: currentValue ?? (type === 'multiple' ? [] : ''),
 			onValueChange: handleValueChange,
 			disabled,
 			size,
