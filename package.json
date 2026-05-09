@@ -1,9 +1,9 @@
 {
-	"name": "{{ remrg:var project-name }}",
+	"name": "@stateless-studio/ui-react",
 	"version": "0.1.0",
 	"description": "",
-	"author": "{{ remrg:var organization }}",
-	"license": "{{ remrg:var license }}",
+	"author": "Stateless Studio",
+	"license": "MIT",
 	"type": "module",
 	"scripts": {
 		"start": "vite",
@@ -30,8 +30,10 @@
 		"react-dom": "^19.0.0"
 	},
 	"dependencies": {
+		"clsx": "^2.1.1",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react-dom": "^19.0.0",
+		"tailwind-merge": "^3.5.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
@@ -62,6 +64,7 @@
 	"types": "./dist/src/index.d.ts",
 	"exports": {
 		"./package.json": "./package.json",
+		"./ui-react.css": "./dist/src/ui-react.css",
 		".": {
 			"types": "./dist/src/index.d.ts",
 			"import": "./dist/src/index.mjs",
@@ -77,5 +80,10 @@
 	},
 	"files": [
 		"dist"
-	]
+	],
+	"publishConfig": {
+		"access": "restricted",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"sideEffects": false
 }

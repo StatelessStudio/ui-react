@@ -31,6 +31,7 @@ node_modules/
 .eslintcache
 *.zip
 *.tar.gz
+*.tgz
 
 # Temporary directories
 .temp/

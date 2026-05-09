@@ -1,11 +1,11 @@
-# {{ remrg:var project-name }}
+# @stateless-studio/ui-react
 
-{{ remrg:task Write a brief project description }}
+Modern, clean, accessible UI components.
 
 ## Installation
 
 ```bash
-npm install {{ remrg:var project-name }}
+npm install @stateless-studio/ui-react
 ```
 
 ## Quick Start
@@ -17,6 +17,16 @@ npm install {{ remrg:var project-name }}
 - [Contributing Guide](./CONTRIBUTING.md)
 - [Setup Guide](./docs/guides//setup.md)
 - [Development Guide](./docs/guides/development.md)
+
+## Usage
+
+```tsx
+import { Button } from '@stateless-studio/ui-react/components/buttons';
+
+export function MyPage() {
+	return <Button>Click me!</Button>;
+}
+```
 
 ## License
 

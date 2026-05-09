@@ -1,6 +1,6 @@
-Copyright (c) 2026 {{ remrg:var organization }} and others
+Copyright (c) 2026 Stateless Studio and others
 
-{{ remrg:var license }}
+MIT
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

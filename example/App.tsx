@@ -1,5 +1,5 @@
-import { MyComponent } from '@/components/MyComponent';
+import { Button } from '@/components/buttons';
 
 export function App() {
-	return <MyComponent />;
+	return <Button>Click me</Button>;
 }
