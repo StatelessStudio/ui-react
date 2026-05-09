@@ -25,7 +25,10 @@ build/
 out/
 coverage/
 cache/
+node_modules/
 *.cache
+*.tsbuildinfo
+.eslintcache
 *.zip
 *.tar.gz
 

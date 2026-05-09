@@ -1,15 +1,18 @@
 # Development
 
-{{ remrg:task Write a development guide }}
-
 ## Setup
 
 Follow the [Setup Guide](./setup.md) to set-up your project.
 
 ## Development
 
-Follow the [Contributing Guide](../../CONTRIBUTING.md).
+- Follow the [Contributing Guide](../../CONTRIBUTING.md).
+- Run `npm run dev`
+
+## Code Analysis, Linting & Formatting
+
+Run `npm run lint` before you commit your code.
 
 ## Testing & Validation
 
-{{ remrg:task Write a guide for testing & validation }}
+Run `npm test` to lint & test your code

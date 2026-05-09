@@ -19,6 +19,7 @@ git checkout -b feature/short-description
 ```
 
 Branch naming conventions:
+
 - `feature/` - New features
 - `fix/` - Bug fixes
 - `docs/` - Documentation updates
@@ -55,6 +56,7 @@ footer
 **Type:** `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`
 
 **Examples:**
+
 - `feat(auth): add login functionality`
 - `fix(api): resolve timeout issue`
 - `docs: update README`
@@ -69,6 +71,7 @@ footer
 ## Submitting a Pull Request
 
 1. Push your branch to your fork:
+
    ```bash
    git push origin feature/short-description
    ```
@@ -100,6 +103,7 @@ footer
 ### Bug Reports
 
 Include:
+
 - Clear description of the bug
 - Steps to reproduce
 - Expected behavior
@@ -110,6 +114,7 @@ Include:
 ### Feature Requests
 
 Include:
+
 - Clear description of the proposed feature
 - Motivation and use cases
 - Potential implementation approach (optional)
@@ -135,6 +140,7 @@ By contributing to this project, you agree that your contributions will be licen
 ## Questions?
 
 Feel free to:
+
 - Open an issue for questions
 - Check existing discussions
 - Reach out to maintainers

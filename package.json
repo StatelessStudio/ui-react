@@ -1,0 +1,30 @@
+{
+	"name": "{{ remrg:var project-name }}",
+	"version": "1.0.0",
+	"description": "",
+	"author": "{{ remrg:var organization }}",
+	"license": "{{ remrg:var license }}",
+	"scripts": {
+		"build": "tsc -p tsconfig.json",
+		"dev": "tsc -p tsconfig.json --watch",
+		"typecheck": "tsc -p tsconfig.json --noEmit",
+		"lint": "eslint . --fix && prettier --write .",
+		"lint:check": "prettier --check . && eslint .",
+		"test": "npm run lint && npm run typecheck"
+	},
+	"engines": {
+		"node": ">=22.0.0",
+		"npm": ">=10.8.2"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@types/node": "^22.19.17",
+		"@typescript-eslint/eslint-plugin": "^8.57.2",
+		"@typescript-eslint/parser": "^8.57.2",
+		"eslint": "^10.1.0",
+		"prettier": "^3.8.1",
+		"prettier-plugin-brace-style": "^0.10.1",
+		"typescript": "^5.9.3"
+	}
+}

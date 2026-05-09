@@ -16,3 +16,6 @@ trim_trailing_whitespace = false
 [*.{yml,yaml}]
 indent_style = space
 indent_size = 2
+
+[*.{ts,tsx}]
+quote_type = single
