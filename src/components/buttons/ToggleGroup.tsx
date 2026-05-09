@@ -109,7 +109,7 @@ export function ToggleGroup(props: ToggleGroupProps) {
 	const contextValue = useMemo(
 		() => ({
 			type,
-			value: currentValue,
+			value: currentValue ?? (type === 'multiple' ? [] : ''),
 			onValueChange: handleValueChange,
 			disabled,
 			size,
