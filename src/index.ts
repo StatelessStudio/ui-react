@@ -9,6 +9,7 @@
 export * from './animations';
 export * from './colors';
 export * from './components';
+export * from './icons';
 export * from './style-engine';
 export * from './styles';
 
