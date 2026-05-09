@@ -36,3 +36,15 @@ export const focusRingColors = {
 	info: 'focus:ring-info',
 	gradient: 'focus:ring-primary',
 } as const satisfies Record<ColorVariant, string>;
+
+export const hasFocusVisibleColors = {
+	primary: 'has-[:focus-visible]:ring-primary',
+	secondary: 'has-[:focus-visible]:ring-secondary',
+	accent: 'has-[:focus-visible]:ring-accent',
+	muted: 'has-[:focus-visible]:ring-muted-foreground',
+	success: 'has-[:focus-visible]:ring-success',
+	warning: 'has-[:focus-visible]:ring-warning',
+	danger: 'has-[:focus-visible]:ring-danger',
+	info: 'has-[:focus-visible]:ring-info',
+	gradient: 'has-[:focus-visible]:ring-primary',
+} as const satisfies Record<ColorVariant, string>;
