@@ -7,7 +7,6 @@ import { checkRadioStyles } from './styles';
 
 const containerStyles = styles({
 	base: 'relative inline-flex items-center justify-center w-4 h-4 shrink-0',
-	variants: {},
 });
 
 const checkboxStyles = checkRadioStyles;
@@ -16,7 +15,6 @@ const checkIconStyles = styles({
 	base:
 		'absolute w-3 h-3 pointer-events-none hidden ' +
 		'peer-checked:block peer-disabled:opacity-50 text-white',
-	variants: {},
 });
 
 export interface CheckboxProps

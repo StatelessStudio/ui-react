@@ -28,7 +28,6 @@ const avatarStyles = styles({
 
 const imageStyles = styles({
 	base: 'h-full w-full object-cover',
-	variants: {},
 });
 
 type AvatarVariantProps = StyleProps<typeof avatarStyles>;

@@ -8,7 +8,6 @@ import { useFormFieldAria } from './useFormFieldAria';
 
 const textareaStyles = formStyles.extend({
 	base: 'transition-colors min-h-[80px] resize-y',
-	variants: {},
 });
 
 type TextareaStyleProps = StyleProps<typeof textareaStyles>;

@@ -7,26 +7,18 @@ const emptyStateStyles = styles({
 		'flex flex-col items-center justify-center p-8 text-center',
 		'border border-dashed border-neutral-300 rounded-lg',
 	],
-	variants: {},
-	defaults: {},
 });
 
 const emptyStateIconStyles = styles({
 	base: 'mb-4',
-	variants: {},
-	defaults: {},
 });
 
 const emptyStateTitleStyles = styles({
 	base: 'mb-1 font-medium',
-	variants: {},
-	defaults: {},
 });
 
 const emptyStateDescriptionStyles = styles({
 	base: 'mb-4 text-sm',
-	variants: {},
-	defaults: {},
 });
 
 type EmptyStateVariantProps = StyleProps<typeof emptyStateStyles>;

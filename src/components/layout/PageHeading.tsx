@@ -8,8 +8,6 @@ import { Group } from './Group';
 
 const pageHeadingContainerStyles = styles({
 	base: 'mb-6',
-	variants: {},
-	defaults: {},
 });
 
 export interface PageHeadingProps extends Omit<

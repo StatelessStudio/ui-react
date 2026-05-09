@@ -12,8 +12,6 @@ const modalBackdropStyles = styles({
 		'fixed inset-0 bg-black/50',
 		animate({ fadeIn: true, duration: 'medium', easing: 'ease-out' }),
 	],
-	variants: {},
-	defaults: {},
 });
 
 const modalContainerStyles = styles({
@@ -22,26 +20,18 @@ const modalContainerStyles = styles({
 			'w-full max-w-md max-h-[90vh] flex flex-col',
 		animate({ zoomIn: true, duration: 'medium', easing: 'ease-out' }),
 	],
-	variants: {},
-	defaults: {},
 });
 
 const modalHeaderStyles = styles({
 	base: 'p-6 border-b border-muted/10',
-	variants: {},
-	defaults: {},
 });
 
 const modalContentStyles = styles({
 	base: 'p-6 overflow-y-auto',
-	variants: {},
-	defaults: {},
 });
 
 const modalFooterStyles = styles({
 	base: 'p-6 border-t border-muted/10 flex justify-end gap-3',
-	variants: {},
-	defaults: {},
 });
 
 export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {

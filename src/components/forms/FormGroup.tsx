@@ -5,19 +5,14 @@ import { FormFieldContext } from './useFormField';
 
 const formGroupContainerStyles = styles({
 	base: 'flex flex-col gap-1.5',
-	variants: {},
 });
 
 const formGroupLabelStyles = styles({
 	base: 'text-sm font-medium text-foreground/80',
-	variants: {},
-	defaults: {},
 });
 
 const formGroupErrorStyles = styles({
 	base: 'text-xs text-danger',
-	variants: {},
-	defaults: {},
 });
 
 export interface FormGroupProps extends ComponentProps<'div'> {

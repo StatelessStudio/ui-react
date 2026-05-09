@@ -25,8 +25,6 @@ const drawerOverlayStyles = styles({
 		'fixed inset-0 bg-black/50',
 		animate({ fadeIn: true, duration: 'long', easing: 'ease-out' }),
 	],
-	variants: {},
-	defaults: {},
 });
 
 const drawerContainerStyles = styles({
@@ -47,20 +45,14 @@ const drawerContainerStyles = styles({
 
 const drawerHeaderStyles = styles({
 	base: 'p-6 pb-0 border-b border-muted',
-	variants: {},
-	defaults: {},
 });
 
 const drawerContentStyles = styles({
 	base: 'p-6 overflow-y-auto',
-	variants: {},
-	defaults: {},
 });
 
 const drawerFooterStyles = styles({
 	base: 'p-6 border-t border-muted flex gap-3 justify-end',
-	variants: {},
-	defaults: {},
 });
 
 export interface DrawerOverlayProps extends React.HTMLAttributes<HTMLDivElement> {

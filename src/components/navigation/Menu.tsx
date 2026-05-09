@@ -3,8 +3,6 @@ import { styles } from '@/style-engine';
 
 const menuStyles = styles({
 	base: 'flex flex-col gap-1 h-full overflow-auto',
-	variants: {},
-	defaults: {},
 });
 
 export interface MenuProps extends HTMLAttributes<HTMLElement> {

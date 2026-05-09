@@ -5,8 +5,6 @@ import { styles } from '../../style-engine';
 
 const treeStyles = styles({
 	base: 'flex flex-col space-y-1 w-full',
-	variants: {},
-	defaults: {},
 });
 
 export type TreeProps = React.HTMLAttributes<HTMLUListElement>;

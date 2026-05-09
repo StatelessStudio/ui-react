@@ -3,26 +3,18 @@ import { styles } from '@/style-engine';
 
 const sidebarStyles = styles({
 	base: 'w-64 flex h-full flex-col shrink-0 bg-background border-r border-muted',
-	variants: {},
-	defaults: {},
 });
 
 const sidebarHeaderStyles = styles({
 	base: 'p-6',
-	variants: {},
-	defaults: {},
 });
 
 const sidebarContentStyles = styles({
 	base: 'flex-1 min-h-0 space-y-1 px-3 overflow-y-auto',
-	variants: {},
-	defaults: {},
 });
 
 const sidebarFooterStyles = styles({
 	base: 'p-4',
-	variants: {},
-	defaults: {},
 });
 
 export interface SidebarProps extends React.HTMLAttributes<HTMLElement> {

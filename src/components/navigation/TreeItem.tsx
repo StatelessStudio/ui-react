@@ -13,8 +13,6 @@ const treeItemContainerStyles = styles({
 	base:
 		'rounded-sm select-none outline-none ' +
 		'focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset',
-	variants: {},
-	defaults: {},
 });
 
 const treeItemButtonStyles = navItemStyles;
@@ -24,8 +22,6 @@ const treeItemNestedListStyles = styles({
 		'pl-6 mt-1 flex flex-col space-y-1 relative ' +
 		'before:absolute before:left-3 before:top-2 before:bottom-0 ' +
 		'before:w-px before:bg-border',
-	variants: {},
-	defaults: {},
 });
 
 const treeItemIconStyles = styles({

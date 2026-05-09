@@ -8,7 +8,6 @@ import { useFormFieldAria } from './useFormFieldAria';
 
 const inputStyles = formStyles.extend({
 	base: 'rounded-md border outline-none transition-colors',
-	variants: {},
 });
 
 type InputStyleProps = StyleProps<typeof inputStyles>;

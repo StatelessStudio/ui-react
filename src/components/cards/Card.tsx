@@ -35,8 +35,6 @@ export function Card({
 
 const cardHeaderStyles = styles({
 	base: 'flex flex-col space-y-1.5 p-6 pb-0',
-	variants: {},
-	defaults: {},
 });
 
 export function CardHeader({
@@ -66,8 +64,6 @@ export function CardTitle({ level = 2, ...props }: CardTitleProps) {
 
 const cardDescriptionStyles = styles({
 	base: 'mb-4 text-sm text-muted-foreground',
-	variants: {},
-	defaults: {},
 });
 
 export function CardDescription({
@@ -84,8 +80,6 @@ export function CardDescription({
 
 const cardContentStyles = styles({
 	base: 'flex-1 p-6 pt-0',
-	variants: {},
-	defaults: {},
 });
 
 export function CardContent({
@@ -102,8 +96,6 @@ export function CardContent({
 
 const cardFooterStyles = styles({
 	base: 'flex items-center p-6 pt-0',
-	variants: {},
-	defaults: {},
 });
 
 export function CardFooter({

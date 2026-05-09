@@ -18,8 +18,6 @@ const contextMenuStyles = styles({
 		'fixed z-50 max-h-[calc(100vh-2rem)] min-w-[8rem] overflow-auto ' +
 		'rounded-md border bg-muted shadow-md focus:outline-none ' +
 		'flex flex-col py-1 text-foreground border-muted',
-	variants: {},
-	defaults: {},
 });
 
 const contextMenuItemStyles = styles({
@@ -27,8 +25,6 @@ const contextMenuItemStyles = styles({
 		'px-3 py-2 text-sm rounded-none outline-none ' +
 		'focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-primary ' +
 		'focus-visible:ring-inset focus-visible:rounded-sm',
-	variants: {},
-	defaults: {},
 });
 
 interface ContextMenuContextType {

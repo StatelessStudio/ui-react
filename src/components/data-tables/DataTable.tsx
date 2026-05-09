@@ -17,38 +17,26 @@ import { Spinner } from '../progress/Spinner';
 
 const dataTableWrapperStyles = styles({
 	base: 'space-y-4',
-	variants: {},
-	defaults: {},
 });
 
 const dataTableTableWrapperStyles = styles({
 	base: 'relative rounded-md',
-	variants: {},
-	defaults: {},
 });
 
 const dataTableLoadingOverlayStyles = styles({
 	base: 'absolute inset-0 z-10 flex flex-col items-center justify-center bg-background/50 backdrop-blur-[1px] pt-14',
-	variants: {},
-	defaults: {},
 });
 
 const dataTablePaginationWrapperStyles = styles({
 	base: 'flex items-center justify-between p-2',
-	variants: {},
-	defaults: {},
 });
 
 const dataTablePaginationLeftStyles = styles({
 	base: 'flex items-center gap-2',
-	variants: {},
-	defaults: {},
 });
 
 const dataTablePageSizeTextStyles = styles({
 	base: 'whitespace-nowrap text-sm font-medium text-foreground/80',
-	variants: {},
-	defaults: {},
 });
 
 export interface ColumnDef<T> {
