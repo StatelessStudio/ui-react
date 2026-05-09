@@ -6,7 +6,7 @@ import { feedbackStyles } from './shared';
 const alertVariants = new Set<AlertColor>(['warning', 'danger']);
 
 const alertStyles = styles({
-	base: [feedbackStyles.base, 'shadow-sm'],
+	base: [...feedbackStyles.base, 'shadow-sm'],
 	variants: {
 		color: colorStyles,
 	},
