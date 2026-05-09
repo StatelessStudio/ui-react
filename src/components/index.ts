@@ -9,4 +9,5 @@ export * from './overlay';
 export * from './progress';
 export * from './tables';
 export * from './toggles';
+export * from './toolbars';
 export * from './typography';
