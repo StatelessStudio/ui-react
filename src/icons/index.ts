@@ -1,4 +1,5 @@
 export * from './BoxIcon';
+export * from './CheckIcon';
 export * from './ChevronDownIcon';
 export * from './ChevronRightIcon';
 export * from './ChevronUpIcon';
