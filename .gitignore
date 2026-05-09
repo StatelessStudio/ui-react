@@ -39,3 +39,8 @@ scratch/
 
 # remrg
 .remrg/cache
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/

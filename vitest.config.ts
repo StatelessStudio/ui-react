@@ -21,7 +21,7 @@ export default defineConfig({
 		// Include test files matching these patterns
 		include: [
 			'src/**/*.{test,spec}.{ts,tsx}',
-			'test/**/*.{test,spec}.{ts,tsx}',
+			'test/unit/**/*.{test,spec}.{ts,tsx}',
 		],
 
 		// Test reporters

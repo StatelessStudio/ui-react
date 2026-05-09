@@ -13,7 +13,9 @@
 		"test": "npm run lint && npm run typecheck && npm run test:run",
 		"test:ci": "npm run lint:check && npm run typecheck && npm run test:run",
 		"test:dev": "vitest --ui --coverage",
-		"test:run": "vitest run --coverage"
+		"test:run": "vitest run --coverage && npm run test:e2e",
+		"test:e2e": "playwright test",
+		"test:dev:e2e": "playwright test --ui"
 	},
 	"engines": {
 		"node": ">=22.0.0",
@@ -22,6 +24,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@playwright/test": "^1.43.0",
 		"@types/node": "^22.19.17",
 		"@typescript-eslint/eslint-plugin": "^8.57.2",
 		"@typescript-eslint/parser": "^8.57.2",
