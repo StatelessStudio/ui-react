@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Form component - a managed form with a submit button, loading spinner, and success/error alerts
 - TriState Button - A stateful button which also indicates loading, error, and success states
 - TriState - Stateful Icon set to indicate loading, error, success
 

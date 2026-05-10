@@ -50,7 +50,7 @@ export function TriStateButton({
 				<TriState
 					state={state}
 					size={size}
-					className={cn('text-white', className)}
+					className="text-white"
 				/>
 			)}
 		</Button>

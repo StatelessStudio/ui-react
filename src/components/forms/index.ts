@@ -1,5 +1,6 @@
 export * from './Checkbox';
 export * from './ComboBox';
+export * from './Form';
 export * from './FormGroup';
 export * from './Input';
 export * from './Label';
