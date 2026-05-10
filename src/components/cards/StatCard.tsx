@@ -19,7 +19,7 @@ export function StatCard(card: {
 	const Icon = card.icon;
 	const textClass = card.color
 		? 'text-white'
-		: 'text-gray-800 dark:text-gray-200';
+		: 'text-foreground/70 dark:text-gray-200';
 	const iconBgClass =
 		card.iconBgColor ||
 		(card.color ? 'bg-white/10' : 'bg-gray-900/10 dark:bg-white/10');
