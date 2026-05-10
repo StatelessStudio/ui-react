@@ -139,7 +139,7 @@ export function Form({
 				<div>
 					<TriStateButton
 						state={getButtonState()}
-						className="w-full justify-center"
+						className="w-full"
 						type="submit"
 					>
 						{submitText}
