@@ -3,6 +3,8 @@ export * from './CheckIcon';
 export * from './ChevronDownIcon';
 export * from './ChevronRightIcon';
 export * from './ChevronUpIcon';
+export * from './CircleCheckIcon';
+export * from './CircleXIcon';
 export * from './CloseIcon';
 export * from './MenuIcon';
 export * from './SearchIcon';
