@@ -135,7 +135,7 @@ export function Form({
 				</div>
 			)}
 
-			{submitText && (
+			{submitText && !error && (
 				<div>
 					<TriStateButton
 						state={getButtonState()}
