@@ -15,7 +15,7 @@ const paginationItemStyles = styles({
 		'border border-muted/50 bg-background text-foreground select-none',
 	variants: {
 		state: {
-			active: 'bg-primary text-background',
+			active: 'bg-primary text-white opacity-90 disabled:opacity-90',
 			inactive: 'hover:bg-primary/50 hover:text-foreground',
 			disabled: 'opacity-50',
 			ellipsis: 'text-muted',

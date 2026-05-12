@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixes
 
 - Button centers content
+- Pagination active page opacity
 
 ### Docs
 
