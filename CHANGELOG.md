@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Button centers content
 - Pagination active page opacity
+- Pagination overflow on mobile
 
 ### Docs
 

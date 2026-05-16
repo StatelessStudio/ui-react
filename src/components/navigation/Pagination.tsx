@@ -59,7 +59,7 @@ export function Pagination({
 			className={cn('flex items-center', className)}
 			{...props}
 		>
-			<ul className="flex items-center space-x-2 m-0 p-0 list-none">
+			<ul className="flex flex-wrap items-center gap-2 m-0 p-0 list-none">
 				<li>
 					<Button
 						disabled={currentPage <= 1}

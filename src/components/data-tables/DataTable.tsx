@@ -28,7 +28,7 @@ const dataTableLoadingOverlayStyles = styles({
 });
 
 const dataTablePaginationWrapperStyles = styles({
-	base: 'flex items-center justify-between p-2',
+	base: 'flex flex-col sm:flex-row items-center justify-between p-2 gap-4',
 });
 
 const dataTablePaginationLeftStyles = styles({
