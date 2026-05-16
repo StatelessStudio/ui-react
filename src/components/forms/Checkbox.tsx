@@ -1,6 +1,6 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, forwardRef } from 'react';
 import { styles } from '@/style-engine';
-import { CheckIcon } from '@/icons';
+import { CheckIcon, MinusIcon } from '@/icons';
 import { FormElementProps } from './types';
 import { useFormFieldAria } from './useFormFieldAria';
 import { checkRadioStyles } from './styles';
@@ -14,7 +14,14 @@ const checkboxStyles = checkRadioStyles;
 const checkIconStyles = styles({
 	base:
 		'absolute w-3 h-3 pointer-events-none hidden ' +
-		'peer-checked:block peer-disabled:opacity-50 text-white',
+		'peer-checked:block peer-indeterminate:hidden ' +
+		'peer-disabled:opacity-50 text-white',
+});
+
+const indeterminateIconStyles = styles({
+	base:
+		'absolute w-3 h-3 pointer-events-none hidden ' +
+		'peer-indeterminate:block peer-disabled:opacity-50 text-white',
 });
 
 export interface CheckboxProps
@@ -22,40 +29,50 @@ export interface CheckboxProps
 		Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>,
 		FormElementProps {}
 
-export function Checkbox({
-	invalid,
-	error,
-	errorId,
-	'aria-invalid': ariaInvalidProp,
-	'aria-describedby': ariaDescribedByProp,
-	className = '',
-	...props
-}: CheckboxProps) {
-	const { id, isInvalid, ariaInvalid, ariaDescribedBy } = useFormFieldAria({
-		id: props.id,
-		invalid,
-		error,
-		errorId,
-		'aria-invalid': ariaInvalidProp,
-		'aria-describedby': ariaDescribedByProp,
-	});
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+	function Checkbox(
+		{
+			invalid,
+			error,
+			errorId,
+			'aria-invalid': ariaInvalidProp,
+			'aria-describedby': ariaDescribedByProp,
+			className = '',
+			...props
+		},
+		ref
+	) {
+		const { id, isInvalid, ariaInvalid, ariaDescribedBy } = useFormFieldAria({
+			id: props.id,
+			invalid,
+			error,
+			errorId,
+			'aria-invalid': ariaInvalidProp,
+			'aria-describedby': ariaDescribedByProp,
+		});
 
-	return (
-		<span {...containerStyles.render({ className })}>
-			<input
-				type="checkbox"
-				id={id}
-				{...checkboxStyles.render({
-					state: isInvalid ? 'error' : 'default',
-				})}
-				aria-invalid={ariaInvalid}
-				aria-describedby={ariaDescribedBy}
-				{...props}
-			/>
-			<CheckIcon
-				{...checkIconStyles.render()}
-				strokeWidth={4}
-			/>
-		</span>
-	);
-}
+		return (
+			<span {...containerStyles.render({ className })}>
+				<input
+					type="checkbox"
+					id={id}
+					ref={ref}
+					{...checkboxStyles.render({
+						state: isInvalid ? 'error' : 'default',
+					})}
+					aria-invalid={ariaInvalid}
+					aria-describedby={ariaDescribedBy}
+					{...props}
+				/>
+				<CheckIcon
+					{...checkIconStyles.render()}
+					strokeWidth={4}
+				/>
+				<MinusIcon
+					{...indeterminateIconStyles.render()}
+					strokeWidth={4}
+				/>
+			</span>
+		);
+	}
+);

@@ -38,7 +38,7 @@ export const checkRadioStyles = baseFormStyles.extend({
 	variants: {
 		state: {
 			default:
-				'border-muted checked:bg-primary ' +
+				'border-muted checked:bg-primary indeterminate:bg-primary ' +
 				'focus:ring-primary focus:border-primary',
 			error: 'border-danger focus:ring-danger focus:border-danger',
 		},
