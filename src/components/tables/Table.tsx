@@ -15,7 +15,7 @@ const tableStyles = styles({
 });
 
 const tableHeaderStyles = styles({
-	base: '[&_tr]:border-b',
+	base: '[&_tr]:border-b [&_tr]:border-border/80',
 });
 
 const tableBodyStyles = styles({
@@ -23,15 +23,19 @@ const tableBodyStyles = styles({
 });
 
 const tableFooterStyles = styles({
-	base: 'bg-muted/50 border-t font-medium [&>tr]:last:border-b-0',
+	base: 'bg-muted/50 border-t border-border/80 font-medium [&>tr]:last:border-b-0',
 });
 
 const tableRowStyles = styles({
-	base: 'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
+	base:
+		'border-b border-border/80 transition-colors hover:bg-muted/60 ' +
+		'data-[state=selected]:bg-muted',
 });
 
 const tableHeadStyles = styles({
-	base: 'h-12 px-4 text-left align-middle font-medium text-foreground [&:has([role=checkbox])]:pr-0',
+	base:
+		'h-12 px-4 text-left align-middle font-medium text-foreground ' +
+		'[&:has([role=checkbox])]:pr-0',
 });
 
 const tableCellStyles = styles({
