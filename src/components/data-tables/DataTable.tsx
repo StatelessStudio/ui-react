@@ -16,11 +16,11 @@ import { Select } from '../forms/Select';
 import { Spinner } from '../progress/Spinner';
 
 const dataTableWrapperStyles = styles({
-	base: 'space-y-4',
+	base: 'flex flex-col h-full min-h-0',
 });
 
 const dataTableTableWrapperStyles = styles({
-	base: 'relative rounded-md',
+	base: 'relative rounded-md flex-1 min-h-0 flex flex-col',
 });
 
 const dataTableLoadingOverlayStyles = styles({
@@ -28,7 +28,7 @@ const dataTableLoadingOverlayStyles = styles({
 });
 
 const dataTablePaginationWrapperStyles = styles({
-	base: 'flex flex-col sm:flex-row items-center justify-between p-2 gap-4',
+	base: 'flex flex-col sm:flex-row items-center justify-between p-2 gap-4 border-t border-border shrink-0',
 });
 
 const dataTablePaginationLeftStyles = styles({
@@ -169,8 +169,8 @@ export function DataTable<T extends Record<string, unknown>>({
 						/>
 					</div>
 				)}
-				<Table>
-					<TableHeader>
+				<Table wrapperClassName="flex-1 min-h-0 overflow-auto">
+					<TableHeader className="sticky top-0 z-10 bg-background shadow-[0_1px_0_hsl(var(--border))]">
 						<TableRow>
 							{columns.map((col) => (
 								<TableHead

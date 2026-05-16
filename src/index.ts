@@ -14,5 +14,6 @@ export * from './hooks';
 export * from './layouts';
 export * from './style-engine';
 export * from './styles';
+export * from './views';
 
 export * from './ui-react.css';

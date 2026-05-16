@@ -1,2 +1,2 @@
 export { DataTable } from './DataTable';
-export type { TableState } from './DataTable';
+export type { DataTableProps, TableState } from './DataTable';

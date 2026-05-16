@@ -35,8 +35,7 @@ const menuButtonStyles =
 	'p-2 -ml-2 rounded-md hover:bg-muted transition-colors ' +
 	'focus:outline-none focus:ring-2 focus:ring-primary';
 
-const mainContentStyles =
-	'flex-1 overflow-y-auto p-6 md:p-8 ui-scrollbar relative';
+const mainContentStyles = 'flex-1 p-4 overflow-y-auto ui-scrollbar relative';
 
 export function SidebarLayout({
 	children,
