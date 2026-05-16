@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TriState Button - A stateful button which also indicates loading, error, and success states
 - TriState - Stateful Icon set to indicate loading, error, success
 - Checkbox component supports ref & intermediate state
+- Data-table column classes
 
 ### Fixes
 

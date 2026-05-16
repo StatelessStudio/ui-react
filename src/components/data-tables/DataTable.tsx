@@ -44,6 +44,9 @@ export interface ColumnDef<T> {
 	header: React.ReactNode;
 	cell?: (item: T) => React.ReactNode;
 	sortable?: boolean;
+	className?: string;
+	headerClassName?: string;
+	cellClassName?: string;
 }
 
 export type SortDirection = 'asc' | 'desc';
@@ -174,6 +177,8 @@ export function DataTable<T extends Record<string, unknown>>({
 									key={col.key as string}
 									className={cn(
 										'group rounded-t-xl',
+										col.className,
+										col.headerClassName,
 										col.sortable && (onSort || onStateChange)
 											? 'cursor-pointer select-none hover:bg-muted/50'
 											: ''
@@ -222,7 +227,10 @@ export function DataTable<T extends Record<string, unknown>>({
 							data.map((row, i) => (
 								<TableRow key={getRowKey ? getRowKey(row) : i}>
 									{columns.map((col) => (
-										<TableCell key={col.key as string}>
+										<TableCell
+											key={col.key as string}
+											className={cn(col.className, col.cellClassName)}
+										>
 											{col.cell
 												? col.cell(row)
 												: (row[col.key as keyof T] as React.ReactNode)}
