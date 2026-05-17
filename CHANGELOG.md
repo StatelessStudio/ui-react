@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pagination active page opacity
 - Pagination overflow on mobile
 - Table border colors
+- Checkbox & radio border color
 
 ### Docs
 

@@ -7,7 +7,7 @@ const radioStyles = checkRadioStyles.extend({
 	base: 'rounded-full bg-background checked:border-[5px] focus:ring-offset-2',
 	variants: {
 		state: {
-			default: 'border-primary checked:border-primary focus:ring-primary',
+			default: 'border-primary/50 checked:border-primary focus:ring-primary',
 			error:
 				'border-danger bg-danger/10 checked:border-danger focus:ring-danger',
 		},
