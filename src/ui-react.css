@@ -1,5 +1,3 @@
-@plugin 'tailwindcss-animate';
-
 /* Overridable variables */
 @layer base {
 	:where(:root) {
