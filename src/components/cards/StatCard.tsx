@@ -1,6 +1,6 @@
 import { ElementType, ReactNode } from 'react';
 import { cn } from '@/style-engine';
-import { Card, CardContent } from './Card';
+import { Card, CardContent, CardFooter } from './Card';
 import { Text, Heading } from '../typography';
 import { Spinner } from '../progress';
 import { ColorVariant } from '@/colors';
@@ -15,6 +15,7 @@ export function StatCard(card: {
 	children?: ReactNode;
 	isLoading?: boolean;
 	className?: string;
+	footer?: ReactNode;
 }) {
 	const Icon = card.icon;
 	const textClass = card.color
@@ -63,6 +64,11 @@ export function StatCard(card: {
 					</div>
 				</div>
 			</CardContent>
+			{!!card.footer && (
+				<CardFooter className="pt-0">
+					{card.footer}
+				</CardFooter>
+			)}
 		</Card>
 	);
 }
