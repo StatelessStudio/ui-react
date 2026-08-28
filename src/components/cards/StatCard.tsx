@@ -16,6 +16,7 @@ export function StatCard(card: {
 	isLoading?: boolean;
 	className?: string;
 	footer?: ReactNode;
+	actionMenu?: ReactNode;
 }) {
 	const Icon = card.icon;
 	const textClass = card.color
@@ -30,6 +31,7 @@ export function StatCard(card: {
 			key={card.label}
 			color={card.color}
 			className={card.className}
+			actionMenu={card.actionMenu}
 		>
 			<CardContent className="pt-6">
 				<div className="flex items-start gap-4">

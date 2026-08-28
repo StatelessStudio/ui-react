@@ -18,18 +18,40 @@ type CardVariantProps = StyleProps<typeof cardStyles>;
 export interface CardProps
 	extends
 		Omit<React.ComponentProps<'div'>, keyof CardVariantProps>,
-		CardVariantProps {}
+		CardVariantProps {
+	actionMenu?: React.ReactNode;
+}
 
 export function Card({
 	color = cardStyles.defaults.color,
 	className = '',
+	actionMenu,
 	...props
 }: CardProps) {
 	return (
 		<div
+			style={{
+				position: 'relative',
+				display: 'flex',
+				flexDirection: 'column',
+			}}
 			{...props}
 			{...cardStyles.render({ color, className })}
-		/>
+		>
+			{actionMenu && (
+				<div
+					style={{
+						position: 'absolute',
+						top: '1rem',
+						right: '1rem',
+						zIndex: 10,
+					}}
+				>
+					{actionMenu}
+				</div>
+			)}
+			{props.children}
+		</div>
 	);
 }
 
@@ -106,6 +128,42 @@ export function CardFooter({
 		<div
 			{...props}
 			{...cardFooterStyles.render({ className })}
+		/>
+	);
+}
+
+const cardActionMenuStyles = styles({
+	base: 'absolute top-4 right-4 z-10',
+});
+
+export interface CardActionMenuProps extends React.ComponentProps<'div'> {}
+
+export function CardActionMenu({
+	className = '',
+	...props
+}: CardActionMenuProps) {
+	return (
+		<div
+			{...props}
+			{...cardActionMenuStyles.render({ className })}
+		/>
+	);
+}
+
+const cardHeaderActionMenuStyles = styles({
+	base: 'flex justify-end mt-1 mr-2',
+});
+
+export interface CardHeaderActionMenuProps extends React.ComponentProps<'div'> {}
+
+export function CardHeaderActionMenu({
+	className = '',
+	...props
+}: CardHeaderActionMenuProps) {
+	return (
+		<div
+			{...props}
+			{...cardHeaderActionMenuStyles.render({ className })}
 		/>
 	);
 }

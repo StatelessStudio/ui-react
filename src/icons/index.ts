@@ -6,6 +6,7 @@ export * from './ChevronUpIcon';
 export * from './CircleCheckIcon';
 export * from './CircleXIcon';
 export * from './CloseIcon';
+export * from './MenuDotsIcon';
 export * from './MenuIcon';
 export * from './MinusIcon';
 export * from './SearchIcon';
