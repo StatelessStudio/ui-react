@@ -9,6 +9,16 @@ const sizes = {
 	lg: 'h-4',
 };
 
+const orientations = {
+	horizontal: 'flex-row',
+	vertical: 'flex-col',
+} as const;
+
+const directions = {
+	normal: '',
+	reverse: 'justify-end',
+} as const;
+
 const trackColors: Record<ColorVariant, string> = {
 	primary: 'bg-primary/20',
 	secondary: 'bg-secondary/20',
@@ -22,21 +32,26 @@ const trackColors: Record<ColorVariant, string> = {
 };
 
 const progressTrackStyles = styles({
-	base: 'w-full overflow-hidden rounded-full',
+	base: 'flex overflow-hidden rounded-full',
 	variants: {
 		size: sizes,
 		color: trackColors,
+		orientation: orientations,
+		direction: directions,
 	},
 	defaults: {
 		size: 'md',
 		color: 'primary',
+		orientation: 'horizontal',
+		direction: 'normal',
 	},
 });
 
 const progressIndicatorStyles = styles({
-	base: ['h-full rounded-full', animate({ transitionAll: true })],
+	base: ['rounded-full', animate({ transitionAll: true })],
 	variants: {
 		color: colorStyles,
+		size: sizes,
 	},
 	defaults: {
 		color: 'primary',
@@ -58,6 +73,8 @@ export function ProgressBar({
 	indicatorClassName,
 	size = progressTrackStyles.defaults.size,
 	color = progressTrackStyles.defaults.color,
+	orientation = progressTrackStyles.defaults.orientation,
+	direction = progressTrackStyles.defaults.direction,
 	className = '',
 	...props
 }: ProgressProps) {
@@ -74,14 +91,24 @@ export function ProgressBar({
 			aria-valuemin={0}
 			aria-valuemax={normalizedMax}
 			{...props}
-			{...progressTrackStyles.render({ size, color, className })}
+			{...progressTrackStyles.render({
+				size,
+				color,
+				orientation,
+				direction,
+				className,
+			})}
 		>
 			<div
 				{...progressIndicatorStyles.render({
 					color,
 					className: indicatorClassName,
 				})}
-				style={{ width: `${percentage}%` }}
+				style={
+					orientation === 'vertical'
+						? { height: `${percentage}%` }
+						: { width: `${percentage}%` }
+				}
 			/>
 		</div>
 	);
