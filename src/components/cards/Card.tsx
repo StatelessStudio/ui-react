@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { styles, StyleProps } from '../../style-engine';
 import { colorStyles } from '../../colors/colors';
-import { Heading, HeadingLevel } from '../typography';
+import { Heading, HeadingLevel, subtitleStyles } from '../typography';
 
 const cardStyles = styles({
 	base: 'flex h-full flex-col rounded-xl border border-muted/20 shadow-sm',
 	variants: {
-		color: { ...colorStyles, none: 'bg-background text-foreground' },
+		color: {
+			...colorStyles,
+			none: 'bg-card text-foreground border border-card-border',
+		},
 	},
 	defaults: {
 		color: 'none',
@@ -164,6 +167,37 @@ export function CardHeaderActionMenu({
 		<div
 			{...props}
 			{...cardHeaderActionMenuStyles.render({ className })}
+		/>
+	);
+}
+
+const cardSubtitleStyles = subtitleStyles.extend({
+	defaults: {
+		...subtitleStyles.defaults,
+		size: 'md',
+		margin: 1,
+	},
+});
+
+type CardSubtitleVariantProps = StyleProps<typeof cardSubtitleStyles>;
+
+export interface CardSubtitleProps
+	extends
+		Omit<React.ComponentProps<'p'>, keyof CardSubtitleVariantProps>,
+		CardSubtitleVariantProps {}
+
+export function CardSubtitle({
+	className = '',
+	size,
+	weight,
+	color,
+	margin,
+	...props
+}: CardSubtitleProps) {
+	return (
+		<p
+			{...cardSubtitleStyles.render({ size, weight, color, margin, className })}
+			{...props}
 		/>
 	);
 }
