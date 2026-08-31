@@ -2,11 +2,11 @@ import React from 'react';
 import { animate } from '@/animations';
 import { focusRingColors, textColors } from '@/colors';
 import { PolymorphicProps, StyleProps } from '@/style-engine';
-import { baseStyles } from '@/styles';
+import { baseStyles, roundingStyles } from '@/styles';
 
 export const buttonStyles = baseStyles.extend({
 	base: [
-		'inline-flex items-center justify-center rounded-md px-5 py-2',
+		'inline-flex items-center justify-center px-5 py-2',
 		'focus:outline-none focus:ring-2',
 		animate({ transitionTransform: true }),
 		'hover:opacity-90',
@@ -20,12 +20,13 @@ export const buttonStyles = baseStyles.extend({
 			outline: 'bg-transparent border',
 			ghost: 'bg-transparent',
 		},
+		rounding: roundingStyles
 	},
-	defaults: { color: 'primary', fill: 'solid' },
+	defaults: { color: 'primary', fill: 'solid', rounding: 'full' },
 	rules: (options) => {
 		const classes = [];
 		const color = options.color ?? 'primary';
-
+	
 		if (options.fill === 'outline' || options.fill === 'ghost') {
 			classes.push(textColors[color]);
 		}
@@ -49,6 +50,7 @@ export function Button<E extends React.ElementType = 'button'>({
 	color = buttonStyles.defaults.color,
 	fill = buttonStyles.defaults.fill,
 	size = buttonStyles.defaults.size,
+	rounding = buttonStyles.defaults.rounding,
 	className = '',
 	...props
 }: ButtonProps<E>) {
@@ -56,7 +58,7 @@ export function Button<E extends React.ElementType = 'button'>({
 
 	return (
 		<Component
-			{...buttonStyles.render({ color, fill, size, className })}
+			{...buttonStyles.render({ color, fill, size, rounding, className })}
 			{...props}
 		>
 			{children}

@@ -19,10 +19,20 @@ export const sizeStyles = {
 	lg: 'px-8 py-3 text-lg',
 } as const;
 
+export const roundingStyles = {
+	none: 'rounded-none',
+	sm: 'rounded-sm',
+	md: 'rounded-md',
+	lg: 'rounded-lg',
+	xl: 'rounded-xl',
+	full: 'rounded-full',
+} as const;
+
 export const baseStyleVariants = {
 	color: colorStyles,
 	shadow: shadowStyles,
 	size: sizeStyles,
+	rounding: roundingStyles,
 } as const;
 
 /**

@@ -2,17 +2,20 @@ import * as React from 'react';
 import { styles, StyleProps } from '../../style-engine';
 import { colorStyles } from '../../colors/colors';
 import { Heading, HeadingLevel, subtitleStyles } from '../typography';
+import { roundingStyles } from '@/styles';
 
 const cardStyles = styles({
-	base: 'flex h-full flex-col rounded-xl border border-muted/20 shadow-sm',
+	base: 'flex h-full flex-col border border-muted/20 shadow-sm',
 	variants: {
 		color: {
 			...colorStyles,
-			none: 'bg-card text-foreground border border-card-border',
+			none: 'bg-card text-foreground border',
 		},
+		rounding: roundingStyles,
 	},
 	defaults: {
 		color: 'none',
+		rounding: 'xl',
 	},
 });
 
@@ -27,6 +30,7 @@ export interface CardProps
 
 export function Card({
 	color = cardStyles.defaults.color,
+	rounding = cardStyles.defaults.rounding,
 	className = '',
 	actionMenu,
 	...props
@@ -39,7 +43,7 @@ export function Card({
 				flexDirection: 'column',
 			}}
 			{...props}
-			{...cardStyles.render({ color, className })}
+			{...cardStyles.render({ color, rounding, className })}
 		>
 			{actionMenu && (
 				<div
