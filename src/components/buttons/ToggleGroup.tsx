@@ -8,10 +8,10 @@ const toggleGroupItemStyles = buttonStyles.extend({
 	variants: {
 		state: {
 			on: 'relative z-10',
-			off: '',
+			off: '!text-foreground',
 		},
 	},
-	defaults: { state: 'off', fill: 'outline' },
+	defaults: { state: 'off', fill: 'ghost' },
 });
 
 type ToggleGroupItemVariantProps = StyleProps<typeof toggleGroupItemStyles>;
