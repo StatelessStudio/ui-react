@@ -66,11 +66,7 @@ export function StatCard(card: {
 					</div>
 				</div>
 			</CardContent>
-			{!!card.footer && (
-				<CardFooter className="pt-0">
-					{card.footer}
-				</CardFooter>
-			)}
+			{!!card.footer && <CardFooter className="pt-0">{card.footer}</CardFooter>}
 		</Card>
 	);
 }

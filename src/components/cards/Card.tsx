@@ -143,7 +143,7 @@ const cardActionMenuStyles = styles({
 	base: 'absolute top-4 right-4 z-10',
 });
 
-export interface CardActionMenuProps extends React.ComponentProps<'div'> {}
+export type CardActionMenuProps = React.ComponentProps<'div'>;
 
 export function CardActionMenu({
 	className = '',
@@ -161,7 +161,7 @@ const cardHeaderActionMenuStyles = styles({
 	base: 'flex justify-end mt-1 mr-2',
 });
 
-export interface CardHeaderActionMenuProps extends React.ComponentProps<'div'> {}
+export type CardHeaderActionMenuProps = React.ComponentProps<'div'>;
 
 export function CardHeaderActionMenu({
 	className = '',

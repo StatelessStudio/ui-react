@@ -8,7 +8,7 @@ const objectLabelStyles = styles({
 			sm: 'gap-2',
 			md: 'gap-3',
 			lg: 'gap-4',
-		}
+		},
 	},
 	defaults: {
 		gap: 'md',

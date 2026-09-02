@@ -1,7 +1,7 @@
 import React from 'react';
 import { styles, StyleProps, PolymorphicProps } from '@/style-engine';
 
-const horizontalGrouped =  [
+const horizontalGrouped = [
 	'[&>*:not(:first-child):not(:last-child)]:rounded-none',
 	'[&>*:first-child]:rounded-r-none',
 	'[&>*:last-child]:rounded-l-none',
@@ -19,7 +19,7 @@ const verticalGrouped = [
 export const buttonGroupStyles = styles({
 	base: [
 		'inline-flex shadow-sm relative',
-		
+
 		'[&>*]:relative [&>*:hover]:z-10 [&>*:focus]:z-10 [&>*:active]:z-10',
 	],
 	variants: {
@@ -28,17 +28,13 @@ export const buttonGroupStyles = styles({
 			grouped: '',
 		},
 		orientation: {
-			horizontal: [
-				'flex-row rounded-full',
-			],
-			vertical: [
-				'flex-col rounded-xl',
-			],
+			horizontal: ['flex-row rounded-full'],
+			vertical: ['flex-col rounded-xl'],
 		},
 	},
 	defaults: {
 		orientation: 'horizontal',
-		appearance: 'grouped'
+		appearance: 'grouped',
 	},
 	rules: (opts) => {
 		if (opts.appearance === 'grouped') {
@@ -49,7 +45,7 @@ export const buttonGroupStyles = styles({
 				return verticalGrouped;
 			}
 		}
-	}
+	},
 });
 
 export type ButtonGroupProps<E extends React.ElementType> = PolymorphicProps<

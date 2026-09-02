@@ -20,13 +20,13 @@ export const buttonStyles = baseStyles.extend({
 			outline: 'bg-transparent border',
 			ghost: 'bg-transparent',
 		},
-		rounding: roundingStyles
+		rounding: roundingStyles,
 	},
 	defaults: { color: 'primary', fill: 'solid', rounding: 'full' },
 	rules: (options) => {
 		const classes = [];
 		const color = options.color ?? 'primary';
-	
+
 		if (options.fill === 'outline' || options.fill === 'ghost') {
 			classes.push(textColors[color]);
 		}

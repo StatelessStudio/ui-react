@@ -35,8 +35,7 @@ type MultipleToggleGroupProps = {
 };
 
 export type ToggleGroupProps = (
-	| SingleToggleGroupProps
-	| MultipleToggleGroupProps
+	SingleToggleGroupProps | MultipleToggleGroupProps
 ) &
 	Omit<ButtonGroupProps<'div'>, 'onChange'> &
 	ToggleGroupAppearance & {
