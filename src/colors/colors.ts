@@ -14,6 +14,7 @@ export type ColorVariant = keyof typeof colorStyles;
 
 export const textColors = {
 	default: 'text-foreground',
+	white: 'text-white',
 	primary: 'text-primary',
 	secondary: 'text-secondary',
 	accent: 'text-accent',
