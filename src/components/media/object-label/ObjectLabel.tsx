@@ -1,8 +1,9 @@
 import React from 'react';
 import { styles, StyleProps } from '@/style-engine';
+import { Stack } from '@/index';
 
 const objectLabelStyles = styles({
-	base: 'flex flex-col items-center gap-2',
+	base: 'items-center',
 	variants: {
 		gap: {
 			sm: 'gap-2',
@@ -53,13 +54,13 @@ export function ObjectLabel({
 	...props
 }: ObjectLabelProps) {
 	return (
-		<div
+		<Stack
 			{...props}
 			{...objectLabelStyles.render({ gap, className })}
 		>
-			{object}
+			<div className="items-center">{object}</div>
 			{label}
-		</div>
+		</Stack>
 	);
 }
 
