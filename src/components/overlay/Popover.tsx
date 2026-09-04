@@ -101,7 +101,7 @@ export function Popover({
 
 	return (
 		<div
-			className={cn('relative inline-block', className)}
+			className={cn('relative', className)}
 			ref={(node) => {
 				(triggerRef as React.RefObject<HTMLDivElement | null>).current = node;
 				const propRef = (props as React.RefAttributes<HTMLDivElement>).ref;
@@ -117,7 +117,7 @@ export function Popover({
 			<div
 				onClick={togglePopover}
 				onKeyDown={handleKeyDown}
-				className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md inline-block"
+				className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
 				aria-haspopup="dialog"
 				aria-expanded={isOpen}
 				tabIndex={0}
