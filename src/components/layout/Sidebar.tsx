@@ -1,8 +1,21 @@
+'use client';
+
 import React from 'react';
 import { styles } from '@/style-engine';
 
 const sidebarStyles = styles({
-	base: 'w-64 flex h-full flex-col shrink-0 bg-background border-r border-muted',
+	base:
+		'flex h-full flex-col shrink-0 bg-background border-r border-muted ' +
+		'transition-all duration-300 ease-in-out',
+	variants: {
+		expanded: {
+			true: 'w-64',
+			false: 'w-30',
+		},
+	},
+	defaults: {
+		expanded: true,
+	},
 });
 
 const sidebarHeaderStyles = styles({
@@ -20,6 +33,7 @@ const sidebarFooterStyles = styles({
 export interface SidebarProps extends React.HTMLAttributes<HTMLElement> {
 	className?: string;
 	children?: React.ReactNode;
+	expanded?: boolean;
 }
 
 export interface SidebarSectionProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -27,11 +41,16 @@ export interface SidebarSectionProps extends React.HTMLAttributes<HTMLDivElement
 	children?: React.ReactNode;
 }
 
-export function Sidebar({ children, className = '', ...props }: SidebarProps) {
+export function Sidebar({
+	children,
+	expanded = true,
+	className = '',
+	...props
+}: SidebarProps) {
 	return (
 		<aside
 			aria-label="Sidebar"
-			{...sidebarStyles.render({ className })}
+			{...sidebarStyles.render({ className, expanded })}
 			{...props}
 		>
 			{children}
@@ -39,17 +58,35 @@ export function Sidebar({ children, className = '', ...props }: SidebarProps) {
 	);
 }
 
+/******************************************************************************
+ * Sidebar Header component
+ *****************************************************************************/
+
+export interface SidebarHeaderProps extends SidebarSectionProps {
+	actionMenu?: React.ReactNode;
+}
+
 export function SidebarHeader({
 	className = '',
+	actionMenu,
 	...props
-}: SidebarSectionProps) {
+}: SidebarHeaderProps) {
 	return (
 		<div
 			{...sidebarHeaderStyles.render({ className })}
 			{...props}
-		/>
+		>
+			{actionMenu && (
+				<div className="absolute top-6 right-4 z-10">{actionMenu}</div>
+			)}
+			{props.children}
+		</div>
 	);
 }
+
+/******************************************************************************
+ * Sidebar Content component
+ *****************************************************************************/
 
 export function SidebarContent({
 	className = '',
@@ -62,6 +99,10 @@ export function SidebarContent({
 		/>
 	);
 }
+
+/******************************************************************************
+ * Sidebar Footer component
+ *****************************************************************************/
 
 export function SidebarFooter({
 	className = '',
