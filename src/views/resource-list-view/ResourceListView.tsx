@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PageHeading, Stack } from '@/components/layout';
 import {
 	DataTable,
@@ -117,15 +117,50 @@ export function ResourceListView<T>({
 		return cols;
 	}, [columns, selection, data, getRowKey]);
 
-	let computedPagination = pagination;
-	if (!computedPagination && totalCount !== undefined) {
-		computedPagination = {
+	// Compute pagination with computed data count when totalCount is not provided
+	const computedPagination = React.useMemo(() => {
+		if (pagination) {
+			return pagination;
+		}
+		if (totalCount === undefined) {
+			return undefined;
+		}
+		
+		return {
 			totalPages: totalCount ? Math.ceil(totalCount / tableState.pageSize) : 1,
 			pageSizeOptions,
 		};
-	}
+	}, [pagination, totalCount, tableState.pageSize]);
 
-	return (
+	// Reset pagination when data changes and current page is out of bounds
+	useEffect(() => {
+		if (!computedPagination) {
+			return;
+		}
+		if (!pagination?.onPageChange && !onTableStateChange) {
+			return;
+		}
+
+		const totalPages = computedPagination.totalPages;
+		const currentPage = tableState.page;
+
+		// If current page exceeds the new total pages, reset to first page
+		if (currentPage > totalPages && totalPages > 0) {
+			if (pagination?.onPageChange) {
+				pagination.onPageChange(1);
+			}
+			if (onTableStateChange) {
+				onTableStateChange({
+					page: 1,
+					pageSize: tableState.pageSize,
+					sortKey: tableState.sortKey,
+					sortDirection: tableState.sortDirection,
+				});
+			}
+		}
+	}, [data, computedPagination?.totalPages, totalCount]);
+
+return (
 		<Stack
 			gap="md"
 			className={cn('flex-1 h-full min-h-0 flex-col', className)}
