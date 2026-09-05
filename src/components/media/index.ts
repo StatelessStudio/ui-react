@@ -1,2 +1,2 @@
 export { Avatar } from './Avatar';
-export { ObjectLabel } from './object-label/ObjectLabel';
+export { ObjectLabel } from './ObjectLabel';
