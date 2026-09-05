@@ -11,11 +11,11 @@ export interface PopoverState {
  * Hook for managing popover open/close state with imperative control
  * @example
  * const popover = usePopoverState();
- * 
+ *
  * <Popover open={popover.isOpen} onOpenChange={popover.setIsOpen}>
  *   Content
  * </Popover>
- * 
+ *
  * // Then call imperatively:
  * popover.open();
  * popover.close();
