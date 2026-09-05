@@ -51,16 +51,17 @@ export function Popover({
 		defaultValue: defaultOpen,
 		onChange: onOpenChange,
 	});
+
 	const triggerRef = useRef<HTMLDivElement>(null);
 
 	const { mounted, overlayRef: popoverRef } = useOverlay({
-		isOpen: !!isOpen,
+		isOpen,
 		onClose: () => setIsOpen(false),
 		lockBodyScroll: false,
 	});
 
 	const { position: coords, mounted: positionMounted } = useOverlayPosition({
-		isOpen: !!isOpen,
+		isOpen,
 		overlayRef: popoverRef,
 		anchorRef: triggerRef,
 		placement: position,
@@ -88,7 +89,7 @@ export function Popover({
 		return () => {
 			document.removeEventListener('pointerdown', handleOutside);
 		};
-	}, [isOpen, popoverRef, triggerRef, setIsOpen]);
+	}, [isOpen, popoverRef, setIsOpen]);
 
 	const togglePopover = () => setIsOpen((prev) => !prev);
 
@@ -102,16 +103,6 @@ export function Popover({
 	return (
 		<div
 			className={cn('relative', className)}
-			ref={(node) => {
-				(triggerRef as React.RefObject<HTMLDivElement | null>).current = node;
-				const propRef = (props as React.RefAttributes<HTMLDivElement>).ref;
-				if (typeof propRef === 'function') {
-					propRef(node);
-				}
-				else if (propRef) {
-					(propRef as React.RefObject<HTMLDivElement | null>).current = node;
-				}
-			}}
 			{...props}
 		>
 			<div
@@ -122,6 +113,7 @@ export function Popover({
 				aria-expanded={isOpen}
 				tabIndex={0}
 				role="button"
+				ref={triggerRef}
 			>
 				{trigger}
 			</div>
