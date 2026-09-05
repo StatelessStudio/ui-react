@@ -1,38 +1,53 @@
-import { MenuItem } from './MenuItem';
-import { ObjectLabel, type ObjectLabelProps } from '../media/ObjectLabel';
-import { Text, TextProps } from '../typography';
-
-import type { MenuCategory } from './menu';
+import React, { ReactNode } from 'react';
+import { PolymorphicProps } from '@/style-engine';
 import { ColorVariant } from '@/colors';
+import { MenuItem, MenuItemProps } from './MenuItem';
+import { ObjectLabel, ObjectLabelProps } from '../media/ObjectLabel';
+import { Text, TextProps } from '../typography/Text';
 
-export interface ObjectMenuItemProps {
+type ObjectMenuItemOwnProps = {
+	name?: ReactNode;
+	icon?: ReactNode;
 	color?: ColorVariant;
 	gap?: ObjectLabelProps['gap'];
 	textSize?: TextProps['size'];
-}
+	active?: boolean;
+	className?: string;
+};
 
-export function ObjectMenuItem(
-	options: MenuCategory & ObjectMenuItemProps & { currentPath: string }
-) {
-	const isActive =
-		options.currentPath === options.path ||
-		options.currentPath.startsWith(options.path + '/');
+export type ObjectMenuItemProps<E extends React.ElementType> = PolymorphicProps<
+	E,
+	ObjectMenuItemOwnProps
+>;
 
+export function ObjectMenuItem<E extends React.ElementType = 'button'>({
+	active = false,
+	color = 'primary',
+	icon,
+	gap,
+	textSize,
+	name,
+	className = '',
+	...props
+}: ObjectMenuItemProps<E>) {
 	return (
-		<MenuItem
-			color={options.color ?? 'primary'}
-			active={isActive}
+		<MenuItem<E>
+			{...(props as MenuItemProps<E>)}
+			color={color}
+			active={active}
+			className={className}
 		>
 			<ObjectLabel
 				className="w-full"
-				object={options.icon}
-				gap={options.gap ?? 'sm'}
+				object={icon}
+				gap={gap ?? 'sm'}
+				color={color}
 				label={
 					<Text
-						size={options.textSize ?? 'xs'}
-						color={isActive ? 'white' : undefined}
+						size={textSize ?? 'xs'}
+						color={active ? 'white' : undefined}
 					>
-						{options.name}
+						{name}
 					</Text>
 				}
 			/>

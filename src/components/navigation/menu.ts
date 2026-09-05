@@ -1,3 +1,4 @@
+import { ColorVariant } from '@/colors';
 import { ReactNode } from 'react';
 
 /**
@@ -7,6 +8,7 @@ export type MenuEntry = {
 	name: string;
 	path: string;
 	icon?: ReactNode;
+	color?: ColorVariant;
 };
 
 /**
