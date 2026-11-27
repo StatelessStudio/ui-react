@@ -125,7 +125,7 @@ export function ResourceListView<T>({
 		if (totalCount === undefined) {
 			return undefined;
 		}
-		
+
 		return {
 			totalPages: totalCount ? Math.ceil(totalCount / tableState.pageSize) : 1,
 			pageSizeOptions,
@@ -160,7 +160,7 @@ export function ResourceListView<T>({
 		}
 	}, [data, computedPagination?.totalPages, totalCount]);
 
-return (
+	return (
 		<Stack
 			gap="md"
 			className={cn('flex-1 h-full min-h-0 flex-col', className)}
