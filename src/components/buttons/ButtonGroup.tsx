@@ -45,6 +45,7 @@ export const buttonGroupStyles = styles({
 				return verticalGrouped;
 			}
 		}
+		return [];
 	},
 });
 

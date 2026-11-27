@@ -195,13 +195,14 @@ export function CardSubtitle({
 	size,
 	weight,
 	color,
-	margin,
 	...props
 }: CardSubtitleProps) {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const { margin, ...restProps } = props;
 	return (
 		<p
-			{...cardSubtitleStyles.render({ size, weight, color, margin, className })}
-			{...props}
+			{...cardSubtitleStyles.render({ size, weight, color, className })}
+			{...restProps}
 		/>
 	);
 }
